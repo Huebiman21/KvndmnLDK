@@ -21,7 +21,6 @@ func NewDNSContext(msg *dns.Msg) *DNSContext {
 	id, _ := uuid.NewV4()
 	return &DNSContext{
 		id:  id,
-		msg: msg,
 	}
 }
 
@@ -34,8 +33,6 @@ func (c *DNSContext) ID() uuid.UUID {
 func (c *DNSContext) SetType(tp string) {
 	c.tp = tp
 }
-
-// Type return type of response
 func (c *DNSContext) Type() string {
 	return c.tp
 }
